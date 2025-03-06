@@ -16,6 +16,9 @@ return (
       </div>
      </div>
      <div className='flex items-center space-x-2 mr-4'>
+     <Link to='/registration'>
+      <button className='px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600'>Register</button>
+      </Link>
       <Link to='/signin'>
       <button className='px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600'>SignIn</button>
       </Link>

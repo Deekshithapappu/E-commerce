@@ -10,6 +10,7 @@ import Mobilesingle from './singlepages/mobilesingle';
 import Usercart from './usercart'
 import SignIn from './signin'
 import SignOut from './signout'
+import RegistrationForm from './register';
 function App() {
   return (
       <Routes>
@@ -23,6 +24,7 @@ function App() {
         <Route path='/usercart' element={<Usercart />} />
         <Route path='/signin' element={<SignIn/>} />
         <Route path='/signout' element={<SignOut/>} />
+        <Route path='/registration' element={<RegistrationForm/>} />
       </Routes>
   );
 }

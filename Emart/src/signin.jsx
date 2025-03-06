@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // If using React Router
-import axios from 'axios'
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
+    
     e.preventDefault();
-    console.log("Email:", email, "Password:", password, "Remember Me:", rememberMe);
-    axios.post('http://localhost:8081/login',{email,password})
-    .then(res=>console.log(res))
+    axios.post('http://localhost:8080/login',{email,password})
+    .then(result=>{console.log(result)
+      if(result.data==="success")
+      {
+        navigate('/mobiles')
+      }
+    
+    })
     .catch(err=>console.log(err))
   };
 
